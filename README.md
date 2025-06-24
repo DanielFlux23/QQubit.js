@@ -22,6 +22,10 @@ QQubit é uma lib que permite simular, estados quânticos de forma simplificada
 
 ### exemplo completo
 ```javascript
+import {QQubit} from '/src/core/script.js';
+
+const qSystem = new QQubit();
+
 qSystem.create((q, superposicao, medir, reset) => {
   console.log("Estado inicial:", q);
   
