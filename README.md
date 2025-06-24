@@ -12,7 +12,7 @@ QQubit é uma lib que permite simular, estados quânticos de forma simplificada
 `const qSystem = new QQubit();`
 
 ### usando recursos
-`qSystem.create((q, superposicao, medir, reset) => {...});``
+`qSystem.create((q, superposicao, medir, reset) => {...});`
 
 - q: contém (alpha, beta e estado)
 - superposicao(q): pode recebe um qubit e colocar ele em superposição
