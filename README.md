@@ -1,6 +1,6 @@
 # QQubit
 
-QQubit é uma lib que permite simular, estados quânticos de forma simplificada
+*QQubit* é uma biblioteca JavaScript para simular o comportamento de qubits de forma simples e acessível. Ideal para aprendizado e testes rápidos sobre computação quântica.
 
 ## 🚀 Como usar
 
