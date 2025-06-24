@@ -1,0 +1,44 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonte e body */
+body {
+    font-family: system-ui, sans-serif;
+    background-color: #f0f0f0;
+    color: #222;
+    padding: 2rem;
+    line-height: 1.6;
+}
+
+/* Container central */
+#app {
+    background: white;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Links e botões básicos */
+a {
+    color: #0070f3;
+    text-decoration: none;
+}
+
+button {
+    background: #0070f3;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #005dc1;
+}

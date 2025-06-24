@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulador de Qubit</title>
+  <style>
+    body { font-family: sans-serif; background: #111; color: #eee; padding: 20px; }
+    button { margin: 10px; padding: 10px 20px; font-size: 1em; }
+    #output { margin-top: 20px; white-space: pre-wrap; background: #222; padding: 10px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <h1>QQubit Simples</h1>
+  <button id="criar">Criar Qubit</button>
+  <button id="super">Superposição</button>
+  <button id="medir">Medir</button>
+  <button id="reset">Resetar</button>
+
+  <div id="output">[Aguardando qubit...]</div>
+
+  <script type="module">
+    import { QQubit } from '/src/core/script.js';
+
+    const sistema = new QQubit();
+    let qubit = null;
+    let superposicao = null;
+    let medir = null;
+    let reset = null;
+
+    const out = document.getElementById('output');
+
+    document.getElementById('criar').onclick = () => {
+      sistema.create((q, s, m, r) => {
+        qubit = q;
+        superposicao = s;
+        medir = m;
+        reset = r;
+        mostrar("Qubit criado.");
+      });
+    };
+
+    document.getElementById('super').onclick = () => {
+      if (!qubit) return mostrar("Crie um qubit primeiro.");
+      superposicao(qubit);
+      mostrar("Superposição aplicada.");
+    };
+
+    document.getElementById('medir').onclick = () => {
+      if (!qubit) return mostrar("Crie um qubit primeiro.");
+      const resultado = medir(qubit);
+      mostrar(`Medição: ${resultado}`);
+    };
+
+    document.getElementById('reset').onclick = () => {
+      if (!qubit) return mostrar("Crie um qubit primeiro.");
+      reset(qubit);
+      mostrar("Qubit resetado.");
+    };
+
+    function mostrar(msg) {
+      out.textContent = `${msg}\n\nEstado atual:\n` + JSON.stringify(qubit, null, 2);
+    }
+  </script>
+</body>
+</html>
